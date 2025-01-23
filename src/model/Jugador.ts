@@ -12,7 +12,7 @@ class Jugador {
     }
 
     calculaFuerzaInicial(){
-        let fuerza_aleatoria = Math.floor(Math.random() * 15 )+ 1
+        let fuerza_aleatoria = Math.floor(Math.random() * 15 ) + 1
         this.puntos_ataque = fuerza_aleatoria
     }
 
