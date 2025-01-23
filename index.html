@@ -5,10 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="module" src="dist/controller/Main.js"></script>
+    <link rel="stylesheet" href="./src/styles/styles.css">
 </head>
 <body>
 
-    <button id="boton">pulsame</button>
-    <p id="a"></p>
+   
+
+    <div id="battle">
+        <div id="controller_npc">
+            <meter min="0" max="100"  id="salud_jugador"></meter>
+            <img src="src/assets/sprites/Jugador/Fallen_Angels_2/PNG/PNG Sequences/Slashing/0_Fallen_Angels_Slashing_011.png" alt="jugador" id="img_jugador">
+
+        </div>
+        <div id="controller_npc">
+            <meter min="0" max="100" id="salud_enemigo"></meter>
+            <img src="src/assets/sprites/Enemigos/Ogre/PNG/PNG Sequences/Slashing/0_Ogre_Slashing_011.png" alt="enemigo" id="img_enemigo">
+            
+        </div>
+    </div>
+
+    <div id="menu">
+        <button class="boton" id="luchar">Luchar</button>
+        <button class="boton" id="tienda">Tienda</button>
+        <button class="boton" id="estadisticas">Estadisticas</button>
+        <button class="boton" id="huir">Huir (salir del juego)</button>
+        
+        <p id="a"></p>
+    </div>
 </body>
 </html>
