@@ -6,13 +6,13 @@ class Jugador {
 
     constructor(nombre:string){
         this.nombre = nombre;
-        this.puntos_salud = 20
+        this.puntos_salud = 100
         this.puntos_ataque = 0
         this.dinero = 2
     }
 
     calculaFuerzaInicial(){
-        let fuerza_aleatoria = Math.floor(Math.random() * 15 ) + 1
+        let fuerza_aleatoria = Math.floor(Math.random() * 20 ) + 10
         this.puntos_ataque = fuerza_aleatoria
     }
 

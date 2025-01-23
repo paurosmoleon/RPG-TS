@@ -12,12 +12,24 @@
    
 
     <div id="battle">
-        <img src="" alt="jugador">
-        <img src="" alt="enemigo">
+        <div id="controller_npc">
+            <meter min="0" max="100"  id="salud_jugador"></meter>
+            <img src="src/assets/sprites/Jugador/Fallen_Angels_2/PNG/PNG Sequences/Slashing/0_Fallen_Angels_Slashing_011.png" alt="jugador" id="img_jugador">
+
+        </div>
+        <div id="controller_npc">
+            <meter min="0" max="100" id="salud_enemigo"></meter>
+            <img src="src/assets/sprites/Enemigos/Ogre/PNG/PNG Sequences/Slashing/0_Ogre_Slashing_011.png" alt="enemigo" id="img_enemigo">
+            
+        </div>
     </div>
 
     <div id="menu">
-        <button id="boton">pulsame</button>
+        <button class="boton" id="luchar">Luchar</button>
+        <button class="boton" id="tienda">Tienda</button>
+        <button class="boton" id="estadisticas">Estadisticas</button>
+        <button class="boton" id="huir">Huir (salir del juego)</button>
+        
         <p id="a"></p>
     </div>
 </body>

@@ -1,10 +1,15 @@
-import Jugador from "../model/Jugador.js" 
-import Enemigo from "../model/Enemigo.js"
-
-const jugador = new Jugador('Carlitos')
-jugador.calculaFuerzaInicial()
+import {combate } from '../model/Luchar.js'
 
 
-document.getElementById('boton').addEventListener('click',() => {
-    document.getElementById('a').innerHTML = jugador.getAtributos
-})
+
+const $ = el => document.querySelector(el)
+
+const $luchar = $('#luchar')
+const $enemigoSalud = $('#salud_enemigo')
+
+
+
+$luchar.addEventListener('click', combate)
+
+
+
