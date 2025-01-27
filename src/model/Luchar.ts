@@ -2,7 +2,7 @@ import Jugador from "../model/Jugador.js"
 import Enemigo from "../model/Enemigo.js"
 
 const enemigo = new Enemigo('jose')
-const jugador = new Jugador('Carlitos')
+export const jugador = new Jugador('Carlitos')
 jugador.calculaFuerzaInicial()
 enemigo.calculaFuerzaEnemigo()
 
