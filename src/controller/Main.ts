@@ -1,9 +1,18 @@
-import Jugador from "../model/Jugador.js" 
+import { combate } from '../model/Luchar.js';
+import { tiendita } from '../model/Tienda.js';
 
-const jugador = new Jugador('Carlitos')
-jugador.calculaFuerzaInicial()
+const $ = el => document.querySelector(el);
 
+const $luchar = $('#luchar');
+const $abrirTienda = $('#abrir-tienda');
+const $cerrarTienda = $('#cerrar-tienda'); 
+const $tiendaContenedor = $('#tienda'); 
 
-document.getElementById('boton').addEventListener('click',() => {
-    document.getElementById('a').innerHTML = jugador.getAtributos
-})
+$luchar.addEventListener('click', combate);
+$abrirTienda.addEventListener('click', tiendita);
+
+// Función para cerrar la tienda
+$cerrarTienda.addEventListener('click', () => {
+    $tiendaContenedor.style.display = 'none';
+    console.log('Tienda cerrada');
+});
