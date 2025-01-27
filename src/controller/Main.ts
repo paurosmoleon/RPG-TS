@@ -1,15 +1,18 @@
-import {combate } from '../model/Luchar.js'
+import { combate } from '../model/Luchar.js';
+import { tiendita } from '../model/Tienda.js';
 
+const $ = el => document.querySelector(el);
 
+const $luchar = $('#luchar');
+const $abrirTienda = $('#abrir-tienda');
+const $cerrarTienda = $('#cerrar-tienda'); 
+const $tiendaContenedor = $('#tienda'); 
 
-const $ = el => document.querySelector(el)
+$luchar.addEventListener('click', combate);
+$abrirTienda.addEventListener('click', tiendita);
 
-const $luchar = $('#luchar')
-const $enemigoSalud = $('#salud_enemigo')
-
-
-
-$luchar.addEventListener('click', combate)
-
-
-
+// Función para cerrar la tienda
+$cerrarTienda.addEventListener('click', () => {
+    $tiendaContenedor.style.display = 'none';
+    console.log('Tienda cerrada');
+});
