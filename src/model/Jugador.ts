@@ -1,14 +1,17 @@
 class Jugador {
     nombre: string;
     puntos_salud: number;
+    salud_maxima: number;
     puntos_ataque: number;
     dinero: number;
 
     constructor(nombre: string) {
         this.nombre = nombre;
-        this.puntos_salud = 100;
+        this.salud_maxima = 100;
+        this.puntos_salud = this.salud_maxima;
         this.puntos_ataque = 0;
-        this.dinero = 2;
+        
+        this.dinero = 200;
     }
 
     calculaFuerzaInicial() {
