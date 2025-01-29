@@ -1,11 +1,20 @@
+@font-face {
+    font-family: 'font-primary';
+    src: url('../assets/fuentes/Roman\ SD.ttf') format('truetype');
+}
+
+
 /* Body básico */
 body {
     margin: 0;
+    padding: 0;
+    height: 100vh;
 }
 
 /* Estilo para el contenedor de batalla */
 #battle {
-    min-height: 70vh;
+    height: 70%;
+    max-height: 70%;
     width: 100%;
     background-image: url(../assets/sprites/PNG/1/terrace.png);
     background-size: cover;
@@ -19,14 +28,76 @@ body {
 
 /* Menú de abajo */
 #menu {
+    overflow: hidden;
     background-color: black;
-    height: 30vh;
+    height: 30%;
     width: 100%;
     bottom: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    place-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    background-image: url('../assets/img/container.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+.botonesMenu{
+    width: 60%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: transparent;
+
+
+
+}
+button{
+  width: 250px;
+  height: 80px;  
+cursor: pointer;
+ background-color: transparent;
+ background-image: url('../assets/img/botton.png');
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ border: none;
+}
+.containerConsole{
+    width: 40%;
+    height: 100%;
+   background-color: transparent;
+    >h3{
+        height: 20%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: x-large;
+        text-shadow: 1px 1px 5px black;
+    }
+
+    > #console{
+        height: 80%;
+        font-family: 'font-primary';    
+        font-size: large;
+        text-align: center;
+        color: white;
+        text-shadow: 1px 1px 5px black;
+        width: 100%;
+        height: 100%; 
+        appearance: none;
+        resize: none;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        cursor: default;
+    }
 }
 
 /* Contenedor de NPC */
@@ -65,11 +136,6 @@ meter::-moz-meter-bar {
     transform: scaleX(-1);
 }
 
-/* Estilo de los botones */
-.boton {
-    width: 100%;
-    height: 100%;
-}
 
 /* Estilos de la tienda (cubrir la pantalla) */
 .tienda-cubrir {
@@ -186,4 +252,44 @@ meter::-moz-meter-bar {
 #tienda img {
     height: 100px;
     width: 100px;
+}
+
+.hurtAnimationPlayer{
+    animation: hurtPlayer  0.3s ease-in-out;
+}
+
+@keyframes hurtPlayer {
+    33%{
+        
+        transform: rotate(15deg);
+    }
+    66%{
+        transform: rotate(-15deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+
+}
+
+.hurtAnimationEnemy{
+    animation: hurtEnemy 0.3s ease-in-out;
+}
+
+@keyframes hurtEnemy {
+    33%{
+        
+        transform:scaleX(-1)  rotate(15deg);
+
+    }
+    66%{
+        transform: scaleX(-1) rotate(-15deg);
+        
+
+    }
+    100%{
+        transform:scaleX(-1) rotate(0deg);
+
+    }
+
 }

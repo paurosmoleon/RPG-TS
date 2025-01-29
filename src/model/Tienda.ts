@@ -1,15 +1,23 @@
 class Tienda {
+    enemigo;
     jugador;
     tiendaItems;
     dineroDisponible;
+    $saludJugador: HTMLMeterElement;
+    $saludEnemigo: HTMLMeterElement;
 
-    constructor(jugador) {
+    constructor(enemigo,jugador) {
+        this.enemigo = enemigo
         this.jugador = jugador;
         this.tiendaItems = document.getElementById('tienda-items');
         this.dineroDisponible = document.getElementById('dinero-disponible-tienda');
 
+        
         this.tiendaItems.innerHTML = '';
         this.dineroDisponible.textContent = `${jugador.dinero} de oro`;
+
+        this.$saludJugador = document.getElementById('salud_jugador') as HTMLMeterElement
+        this.$saludEnemigo = document.getElementById('salud_enemigo') as HTMLMeterElement
     }
 
     async leerJSONTienda() {
@@ -84,6 +92,9 @@ class Tienda {
                             this.jugador.puntos_ataque += element.mejora;
                             alert('Tu ataque ha aumentado en ' + element.mejora + " ahora tienes " + this.jugador.puntos_ataque);
                         }
+                        this.$saludJugador.value = this.jugador.puntos_salud 
+                        this.$saludEnemigo.value = this.enemigo.puntos_salud
+
                     } else {
                         alert('No tienes suficiente oro para comprar este objeto');
                     }

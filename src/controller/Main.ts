@@ -13,13 +13,14 @@ const $abrirTienda = $('#abrir-tienda');
 const $cerrarTienda = $('#cerrar-tienda'); 
 const $tiendaContenedor = $('#tienda'); 
 const luchaClass = new Luchar(enemigo,jugador)
-const tiendita = new Tienda(jugador)
+const tiendita = new Tienda(enemigo,jugador)
+
 
 
 $luchar.addEventListener('click', () =>  luchaClass.combate());
 $abrirTienda.addEventListener('click', () =>  tiendita.tiendita());
 
-// Función para cerrar la tienda
+
 $cerrarTienda.addEventListener('click', () => {
     $tiendaContenedor.style.display = 'none';
     console.log('Tienda cerrada');

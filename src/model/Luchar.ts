@@ -17,7 +17,7 @@ class Luchar {
         this.$saludJugador = this.$('#salud_jugador') as HTMLMeterElement
         this.$saludJugador.value = this.jugador.puntos_salud 
         this.$saludEnemigo = this.$('#salud_enemigo') as HTMLMeterElement
-        this. $saludEnemigo.value = this.enemigo.puntos_salud
+        this.$saludEnemigo.value = this.enemigo.puntos_salud
     }
 
 
@@ -30,12 +30,25 @@ class Luchar {
             if (this.turno === 0 && this.enemigo.puntos_salud > 0){
                 this.enemigo.puntos_salud -= this.jugador.puntos_ataque
                 this.$saludEnemigo.value = this.enemigo.puntos_salud
+                if (!$imgEnemigo.classList.contains("hurtAnimationEnemy")){
+                    $imgEnemigo.classList.add("hurtAnimationEnemy")
+                }
+                $imgEnemigo.addEventListener('animationend', () => {
+                    $imgEnemigo.classList.remove("hurtAnimationEnemy")
+                })
                 this.turno = 1
             }else if( this.turno === 1 && this.jugador.puntos_salud > 0) {
                 this.jugador.puntos_salud -= this.enemigo.puntos_ataque
                 this.$saludJugador.value = this.jugador.puntos_salud
                 this.turno = 0
+                if (!$imgJugador.classList.contains("hurtAnimationPlayer")){
+                    $imgJugador.classList.add("hurtAnimationPlayer")
+                }
+                $imgJugador.addEventListener('animationend', () => {
+                    $imgJugador.classList.remove("hurtAnimationPlayer")
+                })
             }
+
             await new Promise((resolve) => setTimeout(resolve, 1000))
         }
         
