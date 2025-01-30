@@ -113,11 +113,7 @@ class Luchar {
             
             setTimeout(() => this.respawnEnemy(),1000)
         }
-        this.$buttons.forEach(element => {
-            element.disabled = false
-            element.classList.remove('buttonDisabled')
-
-        })
+      
 
     }
     respawnEnemy() {
@@ -131,6 +127,12 @@ class Luchar {
             this.$saludEnemigo.style.opacity = '1'
             $imgEnemigo.style.opacity = '1'
             this.enemigo.calculaFuerzaEnemigo()
+
+            this.$buttons.forEach(element => {
+                element.disabled = false
+                element.classList.remove('buttonDisabled')
+    
+            })
         
     }
 
@@ -139,7 +141,7 @@ class Luchar {
         gameover.style.opacity = '0'
         const textGameover = document.querySelector('body')
         textGameover.innerHTML += `<h1 class="over">GAME OVER</h1>`
-        textGameover.innerHTML += `<a href="#"><button>Volver al inicio </button></a>`
+        textGameover.innerHTML += `<a href="./index.html"><button>Volver al inicio </button></a>`
         
          
         

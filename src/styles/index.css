@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "font-primary";
+    src: url("../assets/fuentes/Roman\ SD.ttf") format("truetype");
+}
+
+html{
+    background-image:url(../assets/img/container.png) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+}
+
+button {
+    width: 250px;
+    height: 80px;
+    cursor: pointer;
+    font-family: "font-primary";
+    color: white;
+    font-weight: 800;
+    font-size: large;
+    background-color: transparent;
+    background-image: url("../assets/img/botton.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    margin: auto;
+    margin-top: 100px;
+}
+main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+p{
+    font-family: font-primary;
+    font-size: 70px;
+    
+}
+#login{
+    display: flex;
+    flex-direction: column;
+}
+#login input{
+    margin: auto;
+    font-size: 40px;
+    height: 70px;
+    width: 500px;
+    font-family: 'Cinzel', serif; 
+}
+.mi-input {
+    
+
+    color: white; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    border: 2px solid #d4af37; 
+    padding: 10px;
+    width: 300px;
+    text-align: center; 
+    outline: none; 
+    /* box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);  */
+}
+
+.mi-input::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Color más tenue para el placeholder */
+    font-style: italic;
+}
+

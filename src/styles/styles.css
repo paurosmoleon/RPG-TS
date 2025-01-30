@@ -176,33 +176,43 @@ meter::-moz-meter-bar {
 
 /* Estilos de la tienda (cubrir la pantalla) */
 .tienda-cubrir {
+  
   position: fixed;
-  top: 0;
+  top: -130px;
   left: 0;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 /* Contenido de la tienda */
 .tienda-contenido {
-  background: #fff;
+  /* background: rgba(10, 49, 61, 0.7);
+  backdrop-filter: blur(3px);
+  */
+  background-image: url(../assets/img/container.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
   border-radius: 10px;
   width: 800px;
   height: 600px;
   display: flex;
   flex-direction: column;
+  
 }
 
 /* Encabezado de la tienda */
 .tienda-contenido h2 {
+  font-family: font-primary;
+  letter-spacing: 2px;
   font-size: 2rem;
   width: 100%;
-  background-color: black;
-  color: white;
-  margin-top: 0;
+  color: rgb(149, 149, 149);
+  margin-top: 10;
   height: 10%;
   justify-content: center;
   align-items: center;
@@ -212,10 +222,9 @@ meter::-moz-meter-bar {
 
 /* Dinero disponible en la tienda */
 #dinero-jugador-tienda {
-  margin-top: -3%;
-  margin-left: 0;
-  background-color: gold;
-  width: 120px;
+  margin: 0 auto ;
+  color: gold;
+  width: 200px;
   font-style: italic;
   font-weight: 1000;
 }
@@ -233,7 +242,7 @@ meter::-moz-meter-bar {
   border: none;
   font-size: large;
   margin-top: -13%;
-  margin-left: 93%;
+  margin-left: 92%;
 }
 
 /* Contenedor de los ítems de la tienda (Grid para las columnas) */
@@ -249,14 +258,19 @@ meter::-moz-meter-bar {
 /* Estilo de cada tarjeta */
 .card {
   width: 100%;
-  max-width: 250px; /* Limitar el tamaño máximo de las tarjetas */
+  max-width: 200px; 
   padding: 15px;
-  border: 1px solid #ddd;
+  color: rgb(226, 226, 226);
+  /* border: 1px solid #ddd; */
   border-radius: 10px;
   text-align: center;
-  background-color: #fff;
+  background-color: transparent;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
+}
+.card button{
+  max-width: 150px;
+  max-height: 40px;
 }
 
 /* Efecto de hover para las tarjetas */
@@ -333,6 +347,8 @@ meter::-moz-meter-bar {
   color: floralwhite;
   text-shadow: 1px 1px 10px rgb(155, 12, 40);
   top: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
   font-family: font-primary;
   font-size: xx-large;
   font-weight: bolder;
