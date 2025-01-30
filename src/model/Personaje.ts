@@ -34,8 +34,8 @@ function rerolearEstadisticas(jugador: Jugador): void {
 document.addEventListener('DOMContentLoaded', () => {
     const jugador = new Jugador('Jugador');
     
-  
-    rerolearEstadisticas(jugador);
+    jugador.calculaFuerzaInicial();
+    mostrarEstadisticas(jugador)
 
     
     const rerollButton = document.getElementById('rerollButton') as HTMLButtonElement;
