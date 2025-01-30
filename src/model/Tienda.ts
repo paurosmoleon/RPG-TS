@@ -1,3 +1,5 @@
+import Console from "./Console.js";
+
 class Tienda {
     enemigo;
     jugador;
@@ -5,9 +7,9 @@ class Tienda {
     dineroDisponible;
     $saludJugador: HTMLMeterElement;
     $saludEnemigo: HTMLMeterElement;
-    $consola:HTMLTextAreaElement
+    console: Console
 
-    constructor(enemigo,jugador) {
+    constructor(enemigo,jugador,console) {
         this.enemigo = enemigo
         this.jugador = jugador;
         this.tiendaItems = document.getElementById('tienda-items');
@@ -20,7 +22,7 @@ class Tienda {
         this.$saludJugador = document.getElementById('salud_jugador') as HTMLMeterElement
         this.$saludEnemigo = document.getElementById('salud_enemigo') as HTMLMeterElement
 
-        this.$consola = document.querySelector('#console') as HTMLTextAreaElement
+        this.console = new console()
 
     }
 
@@ -69,13 +71,13 @@ class Tienda {
 
                             if (this.jugador.puntos_salud > this.jugador.salud_maxima) {
                                 this.jugador.puntos_salud = this.jugador.salud_maxima;
-                                this.$consola.innerHTML += `\n\n YA TIENES LA VIDA AL MAXIMO \n\n`
+                                this.console.messageShop(`YA TIENES LA VIDA AL MAXIMO `)
                                 this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
                                 console.log(this.jugador.puntos_salud);
                             }else{
                                 this.jugador.dinero -= element.precio;
-                                this.$consola.innerHTML += `\n Has comprado ${element.nombre}\n`
-                                this.$consola.innerHTML += `\n Te has curado ${element.mejora} \n`
+                                this.console.messageShop(`Has comprado ${element.nombre} `)
+                                this.console.messageShop(`Te has curado ${element.mejora} `)
                                 this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
                                 console.log(this.jugador.puntos_salud);
                             }
@@ -84,24 +86,24 @@ class Tienda {
                         } else if (element.nombre === 'Escudo de Madera') {
                             this.jugador.dinero -= element.precio;
                             this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
-                            this.$consola.innerHTML += `\n Has comprado ${element.nombre}\n`
+                            this.console.messageShop(`Has comprado ${element.nombre} `)
                             this.jugador.salud_maxima += element.mejora;
-                            this.$consola.innerHTML += `\n Tu vida maxima ha amuentado en ${element.mejora} ahora tienes ${this.jugador.salud_maxima} \n`
+                            this.console.messageShop(`Tu vida maxima ha amuentado en ${element.mejora} ahora tienes ${this.jugador.salud_maxima}`)
 
 
                         } else if (element.nombre === 'Espada de Hierro') {
                             this.jugador.dinero -= element.precio;
                             this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
-                            this.$consola.innerHTML += `\n Has comprado ${element.nombre}\n`
+                            this.console.messageShop(`Has comprado ${element.nombre} `)
                             this.jugador.puntos_ataque += element.mejora;
-                            this.$consola.innerHTML += `\n Tu vida ataque ha amuentado en ${element.mejora} ahora tienes ${this.jugador.puntos_ataque} \n`
+                             this.console.messageShop(`Tu vida ataque ha amuentado en ${element.mejora} ahora tienes ${this.jugador.puntos_ataque}`)
                         }
                         this.$saludJugador.value = this.jugador.puntos_salud 
                         this.$saludEnemigo.value = this.enemigo.puntos_salud
-                        this.$consola.scrollTop = this.$consola.scrollHeight
+                        this.console.console.scrollTop =  this.console.console.scrollHeight
 
                     } else {
-                        this.$consola.innerHTML += `\n\n No tienes oro suficinete \n\n`
+                        this.console.messageShop(`No tienes oro suficinete`)
                     }
                 });
 

@@ -35,7 +35,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: row;
-
   background-image: url("../assets/img/container.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -84,20 +83,28 @@ button {
     height: 70%;
     font-family: "font-primary";
     font-size: large;
-    text-align: center;
     color: white;
     text-shadow: 1px 1px 5px black;
     width: 100%;
-
-    appearance: none;
-    resize: none;
-    border: none;
-    outline: none;
     background-color: transparent;
     padding: 0;
     margin: 0;
     cursor: default;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    > .Mgood {
+      color: #1e9600;
+    }
+    > .Mbad {
+      color: #ff0000;
+    }
+    > .Mshop{
+      color: #ffd700;
+    }
   }
 }
 
@@ -116,6 +123,7 @@ meter::-webkit-meter-optimum-value {
 
 meter::-moz-meter-bar {
   background: linear-gradient(to left, #1e9600, #fff200 80%, #ff0000);
+  
 }
 
 #salud_jugador,

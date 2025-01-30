@@ -1,3 +1,5 @@
+import Console from "./Console.js"
+
 class Luchar {
     enemigo
     jugador
@@ -5,10 +7,9 @@ class Luchar {
     turno: number
     $saludJugador: HTMLMeterElement
     $saludEnemigo: HTMLMeterElement
-    $consola:HTMLTextAreaElement
     $buttons:any
-
-    constructor(enemigo,jugador){
+    console: Console
+    constructor(enemigo,jugador,console){
         this.enemigo = enemigo
         this.jugador = jugador
         this.$ = el => document.querySelector(el)
@@ -20,9 +21,9 @@ class Luchar {
         this.$saludJugador.value = this.jugador.puntos_salud 
         this.$saludEnemigo = this.$('#salud_enemigo') as HTMLMeterElement
         this.$saludEnemigo.value = this.enemigo.puntos_salud
+        this.console = new console()
 
 
-        this.$consola = this.$('#console') as HTMLTextAreaElement
         this.$buttons = document.querySelectorAll('.boton') as any
     }
 
@@ -39,7 +40,7 @@ class Luchar {
             if (this.turno === 0 && this.enemigo.puntos_salud > 0){
                 this.enemigo.puntos_salud -= this.jugador.puntos_ataque
                 this.$saludEnemigo.value = this.enemigo.puntos_salud
-                this.$consola.innerHTML += `\nLe has pegado al enemigo ${this.jugador.puntos_ataque}\n`
+                this.console.messageGood(`Le has pegado al enemigo ${this.jugador.puntos_ataque}`)
                 if (!$imgEnemigo.classList.contains("hurtAnimationEnemy")){
                     $imgEnemigo.classList.add("hurtAnimationEnemy")
                 }
@@ -50,7 +51,7 @@ class Luchar {
             }else if( this.turno === 1 && this.jugador.puntos_salud > 0) {
                 this.jugador.puntos_salud -= this.enemigo.puntos_ataque
                 this.$saludJugador.value = this.jugador.puntos_salud
-                this.$consola.innerHTML += `\nTe han pegado ${this.enemigo.puntos_ataque}\n`
+                this.console.messageBad(`Te han pegado ${this.enemigo.puntos_ataque}`)
                 this.turno = 0
                 if (!$imgJugador.classList.contains("hurtAnimationPlayer")){
                     $imgJugador.classList.add("hurtAnimationPlayer")
@@ -61,7 +62,7 @@ class Luchar {
                 this.turno = 0
 
             }
-            this.$consola.scrollTop = this.$consola.scrollHeight
+            this.console.console.scrollTop = this.console.console.scrollHeight
             
             await new Promise((resolve) => setTimeout(resolve, 1000))
         }
