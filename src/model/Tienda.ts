@@ -84,10 +84,12 @@ class Tienda {
                             
                            
                         } else if (element.nombre === 'Escudo de Madera') {
+                            const saludJugador = document.querySelector('#salud_jugador') as HTMLMeterElement
                             this.jugador.dinero -= element.precio;
                             this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
                             this.console.messageShop(`Has comprado ${element.nombre} `)
                             this.jugador.salud_maxima += element.mejora;
+                            saludJugador.max = saludJugador.max + element.mejora
                             this.console.messageShop(`Tu vida maxima ha amuentado en ${element.mejora} ahora tienes ${this.jugador.salud_maxima}`)
 
 

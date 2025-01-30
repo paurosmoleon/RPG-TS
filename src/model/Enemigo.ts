@@ -12,7 +12,7 @@ class Enemigo {
     }
 
     calculaFuerzaEnemigo(){
-        let fuerza_aleatoria = Math.floor(Math.random() * 15 ) + 7
+        let fuerza_aleatoria = Math.floor(Math.random() * 15 ) + 4
         this.puntos_ataque = fuerza_aleatoria
     }
 

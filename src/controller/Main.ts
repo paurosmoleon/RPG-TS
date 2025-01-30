@@ -35,3 +35,4 @@ document.getElementById('cerrar-tienda')?.addEventListener('click', () => {
          console.log('Tienda cerrada');
          }
     });
+    luchaClass.randomEnemy()
