@@ -1,15 +1,29 @@
+import Console from "./Console.js";
+
 class Tienda {
+    enemigo;
     jugador;
     tiendaItems;
     dineroDisponible;
+    $saludJugador: HTMLMeterElement;
+    $saludEnemigo: HTMLMeterElement;
+    console: Console
 
-    constructor(jugador) {
+    constructor(enemigo,jugador,console) {
+        this.enemigo = enemigo
         this.jugador = jugador;
         this.tiendaItems = document.getElementById('tienda-items');
         this.dineroDisponible = document.getElementById('dinero-disponible-tienda');
 
+        
         this.tiendaItems.innerHTML = '';
         this.dineroDisponible.textContent = `${jugador.dinero} de oro`;
+
+        this.$saludJugador = document.getElementById('salud_jugador') as HTMLMeterElement
+        this.$saludEnemigo = document.getElementById('salud_enemigo') as HTMLMeterElement
+
+        this.console = new console()
+
     }
 
     async leerJSONTienda() {
@@ -57,13 +71,13 @@ class Tienda {
 
                             if (this.jugador.puntos_salud > this.jugador.salud_maxima) {
                                 this.jugador.puntos_salud = this.jugador.salud_maxima;
-                                alert("Ya tienes el máximo de vida");
+                                this.console.messageShop(`YA TIENES LA VIDA AL MAXIMO `)
                                 this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
                                 console.log(this.jugador.puntos_salud);
                             }else{
                                 this.jugador.dinero -= element.precio;
-                                alert(`¡Has comprado un ${element.nombre}!`);
-                                alert("Te has curado " + element.mejora);
+                                this.console.messageShop(`Has comprado ${element.nombre} `)
+                                this.console.messageShop(`Te has curado ${element.mejora} `)
                                 this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
                                 console.log(this.jugador.puntos_salud);
                             }
@@ -72,20 +86,24 @@ class Tienda {
                         } else if (element.nombre === 'Escudo de Madera') {
                             this.jugador.dinero -= element.precio;
                             this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
-                            alert(`¡Has comprado un ${element.nombre}!`);
+                            this.console.messageShop(`Has comprado ${element.nombre} `)
                             this.jugador.salud_maxima += element.mejora;
-                            alert('Tu vida maxima ha aumentado en ' + element.mejora + " ahora tienes " + this.jugador.salud_maxima);
-                            
+                            this.console.messageShop(`Tu vida maxima ha amuentado en ${element.mejora} ahora tienes ${this.jugador.salud_maxima}`)
+
 
                         } else if (element.nombre === 'Espada de Hierro') {
                             this.jugador.dinero -= element.precio;
                             this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
-                            alert(`¡Has comprado un ${element.nombre}!`);
+                            this.console.messageShop(`Has comprado ${element.nombre} `)
                             this.jugador.puntos_ataque += element.mejora;
-                            alert('Tu ataque ha aumentado en ' + element.mejora + " ahora tienes " + this.jugador.puntos_ataque);
+                             this.console.messageShop(`Tu vida ataque ha amuentado en ${element.mejora} ahora tienes ${this.jugador.puntos_ataque}`)
                         }
+                        this.$saludJugador.value = this.jugador.puntos_salud 
+                        this.$saludEnemigo.value = this.enemigo.puntos_salud
+                        this.console.console.scrollTop =  this.console.console.scrollHeight
+
                     } else {
-                        alert('No tienes suficiente oro para comprar este objeto');
+                        this.console.messageShop(`No tienes oro suficinete`)
                     }
                 });
 

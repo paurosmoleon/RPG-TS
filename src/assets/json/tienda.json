@@ -1,4 +1,5 @@
 [
+
     { "nombre": "Espada de Hierro", "precio": 10, "imagen": "src/assets/img/img_tienda/Espada.png","efecto":"Daño +3", "mejora": 3 },
     { "nombre": "Escudo de Madera", "precio": 10, "imagen": "src/assets/img/img_tienda/Escudo.png","efecto":"Vida maxima +3", "mejora": 3 },
     { "nombre": "Poción de Curación", "precio": 5, "imagen": "src/assets/img/img_tienda/Pocion.png","efecto":"Curacion total", "mejora": 20 }
