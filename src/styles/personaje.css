@@ -57,9 +57,11 @@ img{
 #img-1{
     margin-left: -700px;
     margin-top: -7%;
+    
 }
 #img-2{
     margin-left: 200px;
     margin-top: -7%;
     transform: scaleX(-1);
+    
 }
