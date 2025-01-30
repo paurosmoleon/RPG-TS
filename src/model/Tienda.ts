@@ -42,7 +42,7 @@ class Tienda {
         this.leerJSONTienda().then(data => {
             data.forEach(element => {
                 console.log(element);
-                const card = document.createElement('li');
+                const card = document.createElement('ul');
                 card.classList.add('card');
 
                 const img = document.createElement('img');
