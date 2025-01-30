@@ -1,295 +1,293 @@
 @font-face {
-    font-family: 'font-primary';
-    src: url('../assets/fuentes/Roman\ SD.ttf') format('truetype');
+  font-family: "font-primary";
+  src: url("../assets/fuentes/Roman\ SD.ttf") format("truetype");
 }
-
 
 /* Body básico */
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
 /* Estilo para el contenedor de batalla */
 #battle {
-    height: 70%;
-    max-height: 70%;
-    width: 100%;
-    background-image: url(../assets/sprites/PNG/1/terrace.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: end;
+  height: 70%;
+  max-height: 70%;
+  width: 100%;
+  background-image: url(../assets/sprites/PNG/1/terrace.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: end;
 }
 
 /* Menú de abajo */
 #menu {
-    overflow: hidden;
-    background-color: black;
-    height: 30%;
-    width: 100%;
-    bottom: 0;
-    position: relative;
-    display: flex;
-    flex-direction: row;
+  overflow: hidden;
+  background-color: black;
+  height: 30%;
+  width: 100%;
+  bottom: 0;
+  position: relative;
+  display: flex;
+  flex-direction: row;
 
-    background-image: url('../assets/img/container.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
+  background-image: url("../assets/img/container.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
 }
-.botonesMenu{
-    width: 60%;
+.botonesMenu {
+  width: 60%;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: transparent;
-
-
-
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 150px);
+  place-items: center;
 }
-button{
+button {
   width: 250px;
-  height: 80px;  
-cursor: pointer;
- background-color: transparent;
- background-image: url('../assets/img/botton.png');
- background-position: center;
- background-repeat: no-repeat;
- background-size: 100% 100%;
- border: none;
+  height: 80px;
+  cursor: pointer;
+  font-family: "font-primary";
+  color: white;
+  font-weight: 800;
+  font-size: large;
+  background-color: transparent;
+  background-image: url("../assets/img/botton.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: none;
 }
-.containerConsole{
-    width: 40%;
-    height: 100%;
-   background-color: transparent;
-    >h3{
-        height: 20%;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: x-large;
-        text-shadow: 1px 1px 5px black;
-    }
+.containerConsole {
+  width: 40%;
+  height: 100%;
+  background-color: transparent;
+  > h3 {
+    height: 20%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: xx-large;
+    text-shadow: 1px 1px 5px black;
+  }
 
-    > #console{
-        height: 80%;
-        font-family: 'font-primary';    
-        font-size: large;
-        text-align: center;
-        color: white;
-        text-shadow: 1px 1px 5px black;
-        width: 100%;
-        height: 100%; 
-        appearance: none;
-        resize: none;
-        border: none;
-        outline: none;
-        background-color: transparent;
-        padding: 0;
-        margin: 0;
-        cursor: default;
-    }
+  > #console {
+    height: 70%;
+    font-family: "font-primary";
+    font-size: large;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    width: 100%;
+
+    appearance: none;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    overflow: auto;
+  }
 }
 
 /* Contenedor de NPC */
 #controller_npc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Estilos para el medidor de salud */
 meter::-webkit-meter-optimum-value {
-    background: linear-gradient(to left, #1e9600, #fff200 80%, #ff0000);
+  background: linear-gradient(to left, #1e9600, #fff200 80%, #ff0000);
 }
 
 meter::-moz-meter-bar {
-    background: linear-gradient(to left, #1e9600, #fff200 80%, #ff0000);
+  background: linear-gradient(to left, #1e9600, #fff200 80%, #ff0000);
 }
 
-#salud_jugador, #salud_enemigo {
-    width: 150px;
-    height: 25px;
-    position: relative;
-    top: 100px;
-    transition: opacity 1.5s ease;
+#salud_jugador,
+#salud_enemigo {
+  width: 150px;
+  height: 25px;
+  position: relative;
+  top: 100px;
+  transition: opacity 1.5s ease;
 }
 
 /* Estilos de las imágenes de los personajes */
-#img_enemigo, #img_jugador {
-    width: 30rem;
-    height: auto;
-    transition: opacity 1.5s ease;
+#img_enemigo,
+#img_jugador {
+  width: 30rem;
+  height: auto;
+  transition: opacity 1.5s ease;
 }
 
 #img_enemigo {
-    transform: scaleX(-1);
+  transform: scaleX(-1);
 }
-
 
 /* Estilos de la tienda (cubrir la pantalla) */
 .tienda-cubrir {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Contenido de la tienda */
 .tienda-contenido {
-    background: #fff;
-    border-radius: 10px;
-    width: 800px;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Encabezado de la tienda */
 .tienda-contenido h2 {
-    font-size: 2rem;
-    width: 100%;
-    background-color: black;
-    color: white;
-    margin-top: 0;
-    height: 10%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    border-radius: 10px 10px 0px 0px;
+  font-size: 2rem;
+  width: 100%;
+  background-color: black;
+  color: white;
+  margin-top: 0;
+  height: 10%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 10px 10px 0px 0px;
 }
 
 /* Dinero disponible en la tienda */
 #dinero-jugador-tienda {
-    margin-top: -3%;
-    margin-left: 0;
-    background-color: gold;
-    width: 120px;
-    font-style: italic;
-    font-weight: 1000;
+  margin-top: -3%;
+  margin-left: 0;
+  background-color: gold;
+  width: 120px;
+  font-style: italic;
+  font-weight: 1000;
 }
 
 /* Clase para ocultar elementos */
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* Botón de cerrar tienda */
 #tienda #cerrar-tienda {
-    width: 6%;
-    height: 6%;
-    background-color: transparent;
-    border: none;
-    font-size: large;
-    margin-top: -13%;
-    margin-left: 93%;
+  width: 6%;
+  height: 6%;
+  background-color: transparent;
+  border: none;
+  font-size: large;
+  margin-top: -13%;
+  margin-left: 93%;
 }
 
 /* Contenedor de los ítems de la tienda (Grid para las columnas) */
 #tienda-items {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* Tres columnas */
-    gap: 20px;  /* Espacio entre las tarjetas */
-    margin-top: 10%;
-    padding: 20px;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  gap: 20px; /* Espacio entre las tarjetas */
+  margin-top: 10%;
+  padding: 20px;
+  justify-items: center;
 }
 
 /* Estilo de cada tarjeta */
 .card {
-    width: 100%;
-    max-width: 250px;  /* Limitar el tamaño máximo de las tarjetas */
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    text-align: center;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
+  width: 100%;
+  max-width: 250px; /* Limitar el tamaño máximo de las tarjetas */
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
 }
 
 /* Efecto de hover para las tarjetas */
 .card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Imagen dentro de la tarjeta */
 .card-imagen {
-    width: 100%;
-    height: 100px;
-    object-fit: contain;
-    border-radius: 8px;
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 /* Estilo para el nombre del ítem */
 .card h3 {
-    margin: 10px 0;
-    font-size: 18px;
-    font-weight: bold;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* Estilo para el precio */
 .card p {
-    color: #FFD700;
-    font-weight: bold;
+  color: #ffd700;
+  font-weight: bold;
 }
 
 /* Estilos para imágenes en la tienda */
 #tienda img {
-    height: 100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
 
-.hurtAnimationPlayer{
-    animation: hurtPlayer  0.3s ease-in-out;
+.hurtAnimationPlayer {
+  animation: hurtPlayer 0.3s ease-in-out;
 }
 
 @keyframes hurtPlayer {
-    33%{
-        
-        transform: rotate(15deg);
-    }
-    66%{
-        transform: rotate(-15deg);
-    }
-    100%{
-        transform: rotate(0deg);
-    }
-
+  33% {
+    transform: rotate(15deg);
+  }
+  66% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
-.hurtAnimationEnemy{
-    animation: hurtEnemy 0.3s ease-in-out;
+.hurtAnimationEnemy {
+  animation: hurtEnemy 0.3s ease-in-out;
 }
 
 @keyframes hurtEnemy {
-    33%{
-        
-        transform:scaleX(-1)  rotate(15deg);
+  33% {
+    transform: scaleX(-1) rotate(15deg);
+  }
+  66% {
+    transform: scaleX(-1) rotate(-15deg);
+  }
+  100% {
+    transform: scaleX(-1) rotate(0deg);
+  }
+}
 
-    }
-    66%{
-        transform: scaleX(-1) rotate(-15deg);
-        
-
-    }
-    100%{
-        transform:scaleX(-1) rotate(0deg);
-
-    }
-
+.buttonDisabled {
+  filter: brightness(40%);
 }

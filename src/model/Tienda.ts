@@ -5,6 +5,7 @@ class Tienda {
     dineroDisponible;
     $saludJugador: HTMLMeterElement;
     $saludEnemigo: HTMLMeterElement;
+    $consola:HTMLTextAreaElement
 
     constructor(enemigo,jugador) {
         this.enemigo = enemigo
@@ -18,6 +19,9 @@ class Tienda {
 
         this.$saludJugador = document.getElementById('salud_jugador') as HTMLMeterElement
         this.$saludEnemigo = document.getElementById('salud_enemigo') as HTMLMeterElement
+
+        this.$consola = document.querySelector('#console') as HTMLTextAreaElement
+
     }
 
     async leerJSONTienda() {
@@ -65,13 +69,13 @@ class Tienda {
 
                             if (this.jugador.puntos_salud > this.jugador.salud_maxima) {
                                 this.jugador.puntos_salud = this.jugador.salud_maxima;
-                                alert("Ya tienes el máximo de vida");
+                                this.$consola.innerHTML += `\n\n YA TIENES LA VIDA AL MAXIMO \n\n`
                                 this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
                                 console.log(this.jugador.puntos_salud);
                             }else{
                                 this.jugador.dinero -= element.precio;
-                                alert(`¡Has comprado un ${element.nombre}!`);
-                                alert("Te has curado " + element.mejora);
+                                this.$consola.innerHTML += `\n Has comprado ${element.nombre}\n`
+                                this.$consola.innerHTML += `\n Te has curado ${element.mejora} \n`
                                 this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
                                 console.log(this.jugador.puntos_salud);
                             }
@@ -80,23 +84,24 @@ class Tienda {
                         } else if (element.nombre === 'Escudo de Madera') {
                             this.jugador.dinero -= element.precio;
                             this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
-                            alert(`¡Has comprado un ${element.nombre}!`);
+                            this.$consola.innerHTML += `\n Has comprado ${element.nombre}\n`
                             this.jugador.salud_maxima += element.mejora;
-                            alert('Tu vida maxima ha aumentado en ' + element.mejora + " ahora tienes " + this.jugador.salud_maxima);
-                            
+                            this.$consola.innerHTML += `\n Tu vida maxima ha amuentado en ${element.mejora} ahora tienes ${this.jugador.salud_maxima} \n`
+
 
                         } else if (element.nombre === 'Espada de Hierro') {
                             this.jugador.dinero -= element.precio;
                             this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
-                            alert(`¡Has comprado un ${element.nombre}!`);
+                            this.$consola.innerHTML += `\n Has comprado ${element.nombre}\n`
                             this.jugador.puntos_ataque += element.mejora;
-                            alert('Tu ataque ha aumentado en ' + element.mejora + " ahora tienes " + this.jugador.puntos_ataque);
+                            this.$consola.innerHTML += `\n Tu vida ataque ha amuentado en ${element.mejora} ahora tienes ${this.jugador.puntos_ataque} \n`
                         }
                         this.$saludJugador.value = this.jugador.puntos_salud 
                         this.$saludEnemigo.value = this.enemigo.puntos_salud
+                        this.$consola.scrollTop = this.$consola.scrollHeight
 
                     } else {
-                        alert('No tienes suficiente oro para comprar este objeto');
+                        this.$consola.innerHTML += `\n\n No tienes oro suficinete \n\n`
                     }
                 });
 
