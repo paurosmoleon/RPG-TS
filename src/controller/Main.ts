@@ -3,6 +3,7 @@ import Jugador from '../model/Jugador.js';
 import Enemigo from '../model/Enemigo.js';
 import Tienda from '../model/Tienda.js';
 import Console from '../model/Console.js';
+import Estadisticas from '../model/Estadisticas.js';
 
 
 const $ = el => document.querySelector(el);
@@ -19,10 +20,25 @@ const $tiendaContenedor = $('#tienda');
 
 
 
+const abrirStats = document.getElementById("estadisticas")
+const cerraStats = document.getElementById("cerrar-estadisticas") as HTMLButtonElement;
+const div = document.getElementById("estadisticas-div") as HTMLDivElement;
+
+cerraStats.addEventListener("click", () => {
+
+  div.style.display = "none";
+});
+
+abrirStats.addEventListener("click", () => {
+
+    div.style.display ="block";
+});
 
 
+const mostrarJugador = new Estadisticas(jugador, 'estadisticas-div', enemigo);
 
-
+// Mostrar estadísticas
+mostrarJugador.mostrarEstadisticas();
 
 
 
