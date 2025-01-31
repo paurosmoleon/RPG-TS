@@ -4,15 +4,16 @@ class Enemigo {
     puntos_ataque: number;
     
 
-    constructor(nombre:string ){
-        this.nombre = nombre;
+    constructor( ){
+        const names = ['Jose','Javi','Marcos','Luis','Jose Luis ','Torrente']
+        this.nombre = names[Math.floor(Math.random() * names.length)];
         this.puntos_salud = 100;
         this.puntos_ataque = 0;
         
     }
 
     calculaFuerzaEnemigo(){
-        let fuerza_aleatoria = Math.floor(Math.random() * 15 ) + 7
+        let fuerza_aleatoria = Math.floor(Math.random() * 15 ) + 4
         this.puntos_ataque = fuerza_aleatoria
     }
 

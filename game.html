@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPG</title>
     <script type="module" src="dist/controller/Main.js"></script>
     <link rel="stylesheet" href="./src/styles/styles.css">
 </head>
 <body>
 
    
-
+    <div class="gameover">
+        <h2 id="RoundCount">Ronda actual</h2>
     <div id="battle">
         <div id="controller_npc">
             <meter min="0" max="100"  id="salud_jugador"></meter>
@@ -19,8 +19,7 @@
         </div>
         <div id="controller_npc">
             <meter min="0" max="100" id="salud_enemigo"></meter>
-            <img src="src/assets/sprites/Enemigos/Ogre/PNG/PNG Sequences/Slashing/0_Ogre_Slashing_011.png" alt="enemigo" id="img_enemigo">
-            
+            <img src="" alt="enemigo" id="img_enemigo">            
         </div>
     </div>
 
@@ -35,8 +34,7 @@
             
         </div>
     </div>
-    
-    
+        
     
 
     <div id="menu">
@@ -50,11 +48,9 @@
         <div class="containerConsole">
             <h3>Consola de eventos</h3>
             <div id="console" ></div>
-        </div>
-
-        </textarea>
-        
-        <p id="a"></p>
+        </div>        
     </div>
+</div>
+
 </body>
 </html>

@@ -6,8 +6,10 @@ import Console from '../model/Console.js';
 
 const $ = el => document.querySelector(el);
 
+
+
 const jugador = new Jugador('player')
-const enemigo = new Enemigo('Enemi') 
+const enemigo = new Enemigo() 
 
 const $luchar = $('#luchar');
 const $abrirTienda = $('#abrir-tienda');
@@ -35,3 +37,4 @@ document.getElementById('cerrar-tienda')?.addEventListener('click', () => {
          console.log('Tienda cerrada');
          }
     });
+    luchaClass.randomEnemy()
