@@ -1,5 +1,11 @@
 import Jugador from './Jugador.js';
 
+
+let name = () => {
+    let decode = decodeURIComponent(document.cookie)
+    return decode.split(':')[1]
+}
+name()
 // Función para mostrar las estadísticas en el HTML
 function mostrarEstadisticas(jugador: Jugador): void {
     const nombreElement = document.getElementById('nombre') as HTMLParagraphElement;
@@ -32,7 +38,7 @@ function rerolearEstadisticas(jugador: Jugador): void {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const jugador = new Jugador('Jugador');
+    const jugador = new Jugador(name());
     
     jugador.calculaFuerzaInicial();
     mostrarEstadisticas(jugador)

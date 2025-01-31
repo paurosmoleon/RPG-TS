@@ -4,8 +4,9 @@ class Enemigo {
     puntos_ataque: number;
     
 
-    constructor(nombre:string ){
-        this.nombre = nombre;
+    constructor( ){
+        const names = ['Jose','Javi','Marcos','Luis','Jose Luis ','Torrente']
+        this.nombre = names[Math.floor(Math.random() * names.length)];
         this.puntos_salud = 100;
         this.puntos_ataque = 0;
         
