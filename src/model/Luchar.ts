@@ -19,7 +19,7 @@ class Luchar {
         this.turno = 0
 
         this.jugador.calculaFuerzaInicial()
-        this.enemigo.calculaFuerzaEnemigo()
+        this.enemigo.calculaFuerzaEnemigo(this.round)
         this.$saludJugador = this.$('#salud_jugador') as HTMLMeterElement
         this.$saludJugador.value = this.jugador.puntos_salud 
         this.$saludEnemigo = this.$('#salud_enemigo') as HTMLMeterElement
@@ -126,7 +126,7 @@ class Luchar {
 
             this.$saludEnemigo.style.opacity = '1'
             $imgEnemigo.style.opacity = '1'
-            this.enemigo.calculaFuerzaEnemigo()
+            this.enemigo.calculaFuerzaEnemigo(this.round)
 
             this.$buttons.forEach(element => {
                 element.disabled = false

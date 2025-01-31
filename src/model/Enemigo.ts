@@ -2,23 +2,28 @@ class Enemigo {
     nombre: string;
     puntos_salud: number;
     puntos_ataque: number;
-    
+    ronda: number;
 
     constructor( ){
-        const names = ['Jose','Javi','Marcos','Luis','Jose Luis ','Torrente']
+        const names = ['Jose','Javi','Marcos','Luis','Jose Luis ','Torrente','Warwick','SonicP','Raistlin','Rias','Shifu','Mordekaiser','CucuCabra','સ્કિઝોફ્રેનિયા','Dodo']
         this.nombre = names[Math.floor(Math.random() * names.length)];
         this.puntos_salud = 100;
         this.puntos_ataque = 0;
-        
+        this.ronda = 0;
     }
 
     calculaFuerzaEnemigo(){
-        let fuerza_aleatoria = Math.floor(Math.random() * 15 ) + 4
+        
+        let escalado = 5
+        let aumento = Math.floor(((this.ronda * 1.25) + escalado))
+        let fuerza_aleatoria = Math.floor(Math.random() * 10 ) + aumento
         this.puntos_ataque = fuerza_aleatoria
+        this.ronda ++
     }
 
     soltarDinero(){
-      return Math.floor(Math.random() * 5 ) + 1
+        let escalado = 0 + this.ronda
+        return Math.floor(Math.random() * 10 ) + ( 3 + escalado)
          
     }
 

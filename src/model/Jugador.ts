@@ -11,7 +11,7 @@ class Jugador {
         this.puntos_salud = this.salud_maxima;
         this.puntos_ataque = 0;
         
-        this.dinero = 200;
+        this.dinero = 2;
     }
 
     calculaFuerzaInicial() {
