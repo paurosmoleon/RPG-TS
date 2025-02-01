@@ -353,3 +353,13 @@ meter::-moz-meter-bar {
   font-size: xx-large;
   font-weight: bolder;
 }
+
+
+#name_player,#name_enemy{
+  font-family: font-primary;
+  color: aliceblue;
+  font-size: x-large;
+  position: relative;
+  top: 120px;
+  text-shadow: 1px 1px 10px #ff0000;
+}
