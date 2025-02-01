@@ -5,11 +5,17 @@ class Enemigo {
     ronda: number;
 
     constructor( ){
+
         const names = ['Jose','Javi','Marcos','Luis','Jose Luis ','Torrente','Warwick','SonicP','Raistlin','Rias','Shifu','Mordekaiser','CucuCabra','સ્કિઝોફ્રેનિયા','Dodo']
         this.nombre = names[Math.floor(Math.random() * names.length)];
+      
         this.puntos_salud = 100;
         this.puntos_ataque = 0;
         this.ronda = 0;
+    }
+    nombreAleatorio(){
+        const names = ['Jose','Javi','Marcos','Luis','Jose Luis ','Torrente']
+        this.nombre =  names[Math.floor(Math.random() * names.length)];
     }
 
     calculaFuerzaEnemigo(){

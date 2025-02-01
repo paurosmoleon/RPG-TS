@@ -97,8 +97,9 @@ class Tienda {
                             this.jugador.dinero -= element.precio;
                             this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
                             this.console.messageShop(`Has comprado ${element.nombre} `)
-                            this.jugador.puntos_ataque += element.mejora;
-                             this.console.messageShop(`Tu ataque ha amuentado en ${element.mejora} ahora tienes ${this.jugador.puntos_ataque}`)
+                  
+                            this.jugador.puntos_ataque += Number(element.mejora);
+                             this.console.messageShop(`Tu vida ataque ha amuentado en ${element.mejora} ahora tienes ${this.jugador.puntos_ataque}`)
                         }
                         this.$saludJugador.value = this.jugador.puntos_salud 
                         this.$saludEnemigo.value = this.enemigo.puntos_salud
@@ -106,6 +107,7 @@ class Tienda {
 
                     } else {
                         this.console.messageShop(`No tienes oro suficinete`)
+                        this.console.console.scrollTop =  this.console.console.scrollHeight
                     }
                 });
 

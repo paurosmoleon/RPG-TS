@@ -3,6 +3,8 @@ import Jugador from './Jugador.js';
 
 let name = () => {
     let decode = decodeURIComponent(document.cookie)
+
+     console.log(decode.split(':')[1])
     return decode.split(':')[1]
 }
 name()
@@ -38,7 +40,7 @@ function rerolearEstadisticas(jugador: Jugador): void {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const jugador = new Jugador(name());
+    const jugador = new Jugador(name(),0 ,2);
     
     jugador.calculaFuerzaInicial();
     mostrarEstadisticas(jugador)
@@ -46,4 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const rerollButton = document.getElementById('rerollButton') as HTMLButtonElement;
     rerollButton.addEventListener('click', () => rerolearEstadisticas(jugador));
+
+    const start = document.querySelector('#buttonStart') as HTMLButtonElement
+    start.addEventListener('click',() => {
+        document.cookie =`Nombre:${name()} fuerza:${jugador.puntos_ataque} dinero:${jugador.dinero}`
+    })
 });

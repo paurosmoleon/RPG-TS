@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +14,13 @@
         <h2 id="RoundCount">Ronda actual</h2>
     <div id="battle">
         <div id="controller_npc">
+            <h2 id="name_player"></h2>
             <meter min="0" max="100"  id="salud_jugador"></meter>
             <img src="src/assets/sprites/Jugador/Fallen_Angels_2/PNG/PNG Sequences/Slashing/0_Fallen_Angels_Slashing_011.png" alt="jugador" id="img_jugador">
 
         </div>
         <div id="controller_npc">
+            <h2 id="name_enemy"></h2>
             <meter min="0" max="100" id="salud_enemigo"></meter>
             <img src="" alt="enemigo" id="img_enemigo">            
         </div>
@@ -67,7 +69,7 @@
             <button class="boton" id="abrir-tienda">Tienda</button>
     
             <button class="boton" id="estadisticas">Estadisticas</button>
-            <button class="boton" id="cleanConsole">Limpiar consola</button>
+           <a href="./index.html"> <button class="boton">Salir al menu principal</button></a>
         </div>
         <div class="containerConsole">
             <h3>Consola de eventos</h3>

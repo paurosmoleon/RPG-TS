@@ -18,8 +18,9 @@ class Luchar {
         this.$ = el => document.querySelector(el)
         this.turno = 0
 
-        this.jugador.calculaFuerzaInicial()
-        this.enemigo.calculaFuerzaEnemigo(this.round)
+
+        this.enemigo.calculaFuerzaEnemigo()
+
         this.$saludJugador = this.$('#salud_jugador') as HTMLMeterElement
         this.$saludJugador.value = this.jugador.puntos_salud 
         this.$saludEnemigo = this.$('#salud_enemigo') as HTMLMeterElement
@@ -66,7 +67,8 @@ class Luchar {
         while (this.jugador.puntos_salud > 0 && this.enemigo.puntos_salud > 0){
             if (this.turno === 0 && this.enemigo.puntos_salud > 0){
                 this.enemigo.puntos_salud -= this.jugador.puntos_ataque
-                this.$saludEnemigo.value = this.enemigo.puntos_salud
+                console.log(this.enemigo.puntos_salud)
+                this.$saludEnemigo.value =this.enemigo.puntos_salud
                 this.console.messageGood(`Le has pegado al enemigo ${this.jugador.puntos_ataque}`)
                 if (!$imgEnemigo.classList.contains("hurtAnimationEnemy")){
                     $imgEnemigo.classList.add("hurtAnimationEnemy")
@@ -120,8 +122,11 @@ class Luchar {
        
         const $imgEnemigo = document.getElementById('img_enemigo') as HTMLImageElement
         this.randomEnemy()
+        this.enemigo.nombreAleatorio()
         this.$saludEnemigo.value = 1000
         this.enemigo.puntos_salud = 100
+        const name = document.querySelector('#name_enemy')
+        name.textContent = this.enemigo.nombre
         
 
             this.$saludEnemigo.style.opacity = '1'

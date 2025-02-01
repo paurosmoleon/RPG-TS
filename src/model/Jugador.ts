@@ -5,13 +5,14 @@ class Jugador {
     puntos_ataque: number;
     dinero: number;
 
-    constructor(nombre: string) {
+    constructor(nombre: string,daño,dinero:number) {
         this.nombre = nombre;
         this.salud_maxima = 100;
         this.puntos_salud = this.salud_maxima;
-        this.puntos_ataque = 0;
+        this.puntos_ataque = parseInt(daño);
         
-        this.dinero = 2;
+
+        this.dinero = dinero;
     }
 
     calculaFuerzaInicial() {
