@@ -11,6 +11,7 @@ class Jugador {
         this.puntos_salud = this.salud_maxima;
         this.puntos_ataque = parseInt(daño);
         
+
         this.dinero = dinero;
     }
 

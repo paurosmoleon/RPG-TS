@@ -1,0 +1,35 @@
+#estadisticas-div{
+    background-color: black;
+    position: absolute;
+    display: none;
+    top: 10%;
+    left: 28%;
+    width: 800px;
+    height: 600px;
+    z-index: 1;
+    background-image: url(../assets/img/container.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+   
+}
+#estadisticas-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+#cerrar-estadisticas{
+    position: absolute;
+    width: 6%;
+    height: 6%;
+    background-color: transparent;
+    border: none;
+    font-size: large;
+    margin-top: -20%;
+    margin-left: 42%;
+}
+.stats{
+    color: white;
+}

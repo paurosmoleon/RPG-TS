@@ -97,6 +97,7 @@ class Tienda {
                             this.jugador.dinero -= element.precio;
                             this.dineroDisponible.textContent = `${this.jugador.dinero} de oro`;
                             this.console.messageShop(`Has comprado ${element.nombre} `)
+                  
                             this.jugador.puntos_ataque += Number(element.mejora);
                              this.console.messageShop(`Tu vida ataque ha amuentado en ${element.mejora} ahora tienes ${this.jugador.puntos_ataque}`)
                         }
