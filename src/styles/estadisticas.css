@@ -1,0 +1,32 @@
+#estadisticas-div{
+    background-color: black;
+    position: absolute;
+    display: none;
+    top: 10%;
+    left: 28%;
+    width: 800px;
+    height: 600px;
+    z-index: 1;
+    background-image: url(../assets/img/container.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+   
+}
+#estadisticas-container{
+    width: 100%;
+    
+}
+#cerrar-estadisticas{
+    width: 6%;
+    height: 6%;
+    background-color: transparent;
+    border: none;
+    font-size: large;
+    margin-top: 3%;
+    margin-left: 90%;
+}
+.stats{
+    color: white;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="dist/controller/Main.js"></script>
+    <link rel="stylesheet" href="./src/styles/styles.css">
+    <link rel="stylesheet" href="./src/styles/estadisticas.css">
+</head>
+<body>
+
+   
+    <div class="gameover">
+        <h2 id="RoundCount">Ronda actual</h2>
+    <div id="battle">
+        <div id="controller_npc">
+            <h2 id="name_player"></h2>
+            <meter min="0" max="100"  id="salud_jugador"></meter>
+            <img src="src/assets/sprites/Jugador/Fallen_Angels_2/PNG/PNG Sequences/Slashing/0_Fallen_Angels_Slashing_011.png" alt="jugador" id="img_jugador">
+
+        </div>
+        <div id="controller_npc">
+            <h2 id="name_enemy"></h2>
+            <meter min="0" max="100" id="salud_enemigo"></meter>
+            <img src="" alt="enemigo" id="img_enemigo">            
+        </div>
+    </div>
+
+
+
+    <div id="estadisticas-div">
+        
+        <button id="cerrar-estadisticas">❌</button>
+        <h2>Estadisticas</h2>
+        <div id="estadisticas-container">
+        </div>
+    </div>
+
+
+
+    <div id="tienda" class="tienda-cubrir hidden">
+        <div class="tienda-contenido">
+            <h2>Tienda</h2>
+            <p id="dinero-jugador-tienda">Oro disponible: <span id="dinero-disponible-tienda">0</span></p>
+            <button id="cerrar-tienda">❌</button>
+            <ul id="tienda-items">
+                <!-- Aquí se agregarán dinámicamente los ítems -->
+            </ul>
+            
+        </div>
+    </div>
+
+
+        
+    
+
+    <div id="menu">
+        <div class="botonesMenu">
+            <button class="boton" id="luchar" >Luchar</button>
+            <button class="boton" id="abrir-tienda">Tienda</button>
+    
+            <button class="boton" id="estadisticas">Estadisticas</button>
+           <a href="./index.html"> <button class="boton">Salir al menu principal</button></a>
+        </div>
+        <div class="containerConsole">
+            <h3>Consola de eventos</h3>
+            <div id="console" ></div>
+        </div>        
+    </div>
+</div>
+
+</body>
+</html>
